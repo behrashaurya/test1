@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Create account</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <main class="card">
+      <h1>Create your account</h1>
+      <p class="muted">It takes about ten seconds.</p>
+      <p class="error">{{error}}</p>
+      <form method="post" action="/register">
+        <label>
+          Email
+          <input type="email" name="email" value="{{email}}" autocomplete="email" required />
+        </label>
+        <label>
+          Password
+          <input
+            type="password"
+            name="password"
+            minlength="8"
+            autocomplete="new-password"
+            required
+          />
+          <span class="hint">At least 8 characters.</span>
+        </label>
+        <button type="submit">Sign up</button>
+      </form>
+      <p class="muted">Already have an account? <a href="/login">Sign in</a></p>
+    </main>
+  </body>
+</html>
